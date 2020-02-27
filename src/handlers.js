@@ -8,7 +8,7 @@ exports.messageHandler = (msg, client) => {
             msg.channel.send("pong");
             break;
         case command("menu"):
-            msg.channel.send(menu(msg.content));
+            msg.channel.send(menu(msg.content, client));
             break;
 
     }
