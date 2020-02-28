@@ -1,22 +1,16 @@
 const config = require('../config.json');
-const Discord = require('discord.js');
-const client = new Discord.Client();
 
 exports.command = (name) => {
     return config.prefix + name;
 }
 
 exports.splitCommand = (textContent) => {
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
         if (textContent.startsWith(config.prefix)) {
-            const words = textContent.split(' ');
-            const cmd = words.shift();
-            let params;
-            if (words.length === 0) {
-                params = [''];
-            }
-            else params = words;
+            const params = textContent.split(' ');
+            const cmd = params.shift();
             resolve([cmd, params]);
         }
+        reject(new Error("content passed is not a command"));
     });
 }
