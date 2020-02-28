@@ -7,16 +7,16 @@ exports.command = (name) => {
 }
 
 exports.splitCommand = (textContent) => {
-    if (textContent[0] === '!') {
-        const words = textContent.split(' ');
-        words.shift();
-        console.log(words);
-        if (words.length === 1) {
-            return words[0];
+    return new Promise(resolve => {
+        if (textContent.startsWith(config.prefix)) {
+            const words = textContent.split(' ');
+            const cmd = words.shift();
+            let params;
+            if (words.length === 0) {
+                params = [''];
+            }
+            else params = words;
+            resolve([cmd, params]);
         }
-        if (words.length === 0) {
-            return '';
-        }
-        return words;
-    }
+    });
 }

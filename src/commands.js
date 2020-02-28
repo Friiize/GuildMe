@@ -2,10 +2,14 @@ const Discord = require('discord.js');
 
 exports.menu = (msg, client) => {
     const embed = (new Discord.RichEmbed())
-        .setTitle('Igor tu pue du cul')
-        .setAuthor('GuildMe')
-        .setDescription('Un jour, Igor se leva dans la merde, et depuis, il pua.')
+        // .setAuthor('GuildMe', client.user.avatarURL)
+        .setTitle('Welcome to the GuildMe User Guide !')
+        .setDescription('This bot is for both players and Guild Recruters. He will help you to find the right guild or player by using a powerful filter system.\n To get started write "!gm Help"')
         .setColor(12144482)
-        .setTitle('😱')
+        .setFooter('😱')
+        .setImage()
+        .setThumbnail(client.user.avatarURL)
+        .setURL()
+        .setTimestamp()
     return embed;
 }
