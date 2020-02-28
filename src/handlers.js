@@ -2,14 +2,17 @@ const { command, splitCommand } = require('./helpers');
 const { menu } = require('./commands');
 
 exports.messageHandler = async (msg, client) => {
-    const split = await splitCommand(msg.content);
+    const [cmd, params] = await splitCommand(msg.content);
 
-    switch (split[0]) {
+    switch (cmd) {
         case command("ping"):
             msg.channel.send("pong");
             break;
         case command("menu"):
             msg.channel.send(menu(msg.content, client));
+            break;
+        case command('seek'):
+            caracAppearance(params)
             break;
 
     }

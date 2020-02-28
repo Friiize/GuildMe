@@ -13,3 +13,9 @@ exports.menu = (msg, client) => {
         .setTimestamp()
     return embed;
 }
+
+exports.caracAppearance = (params) => {
+    const pseudo = params[0];
+    const realm = params[1];
+
+} 

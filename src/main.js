@@ -1,9 +1,7 @@
 require('dotenv').config();
 const Discord = require('discord.js');
-const Discord = require('discord.js');
 const client = new Discord.Client();
 const { messageHandler, errorHandler, readyHandler } = require('./handlers');
-// const request = ;
 
 client.on('ready', () => {
     readyHandler(client);
