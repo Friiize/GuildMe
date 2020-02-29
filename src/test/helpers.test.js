@@ -1,7 +1,7 @@
 const { splitCommand } = require('../helpers');
 
 describe('Test la séparation du prefixe de la commande', () => {
-    test('No Params', async () => {
+    test('No Params', () => {
         expect(splitCommand('!ping')).resolves.toEqual(['!ping', []]);
     });
 
