@@ -11,6 +11,6 @@ exports.splitCommand = (textContent) => {
             const cmd = params.shift();
             resolve([cmd, params]);
         }
-        reject(new Error("content passed is not a command"));
+        // reject(new Error("content passed is not a command"));
     });
 }

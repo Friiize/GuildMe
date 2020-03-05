@@ -12,7 +12,7 @@ exports.messageHandler = async (msg, client) => {
             menu(msg, client);
             break;
         case command('seek'):
-            caracAppearance(msg, client, params);
+            caracAppearance(msg, params, client);
             break;
 
     }

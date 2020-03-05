@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const Url = require('./Url');
 
 exports.menu = (msg, client) => {
     const embed = (new Discord.RichEmbed())
@@ -16,6 +17,9 @@ exports.menu = (msg, client) => {
 exports.caracAppearance = (msg, params) => {
     const pseudo = params[0];
     const realm = params[1];
+    console.log(params);
+    const test = new Url(pseudo.toLowerCase(), realm.toLowerCase());
+    console.log(test);
 
-    return msg.channel.send(pseudo, realm);
+    return msg.channel.send(test.request());
 } 
